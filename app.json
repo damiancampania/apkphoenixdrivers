@@ -1,30 +1,58 @@
 {
   "expo": {
-    "name": "popo",
+    "name": "phoenixdrivers",
     "slug": "popo",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/icon1.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#fffeee"
     },
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
+      "infoPlist": {
+        "UIBackgroundModes": [
+          "location",
+          "fetch"
+        ]
+      },
       "supportsTablet": true
     },
     "android": {
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        
+        "FOREGROUND_SERVICE",
+        "ACCESS_BACKGROUND_LOCATION"
+        
+      ],
+      "infoPlist": {
+        "UIBackgroundModes": [
+          "location",
+          "fetch"
+        ]
+      },
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+     
+      "package": "com.dcampania.phoenixdrivers"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "cf9eb9c7-40c3-40d6-9ef1-ba4dbacf642d"
+      }
+    },
+    "owner": "dcampania"
   }
 }
