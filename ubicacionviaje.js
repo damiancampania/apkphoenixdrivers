@@ -32,14 +32,16 @@ function UserLocation({width, height}) {
   const [datosi, setDatosi] = useState('');
   
  
+ 
 
-
+ 
 
   const startLocationTracking = async () => {
     await Location.startLocationUpdatesAsync(LOCATION_TRACKING, {
       accuracy: Location.Accuracy.Highest,
       timeInterval: 200000,
       distanceInterval: 0,
+      
     });
     const hasStarted = await Location.hasStartedLocationUpdatesAsync(LOCATION_TRACKING);
     setLocationStarted(hasStarted);
@@ -168,9 +170,11 @@ function UserLocation({width, height}) {
       body: JSON.stringify({
         latitud: latitude,
         longitud: longitude,
+        
       }),
     };
-
+    
+    
     fetch(`https://phoenixtravels.backend.aptugo.app/api/ubicacionyfoto/${idd}`, requestOptions)
       .then((response) => response.text())
       .then((result) => console.log(result))
@@ -240,7 +244,7 @@ const styles = StyleSheet.create({
   
   stopTrackingText: {
     textAlign: 'center',
-    fontSize: height*0.0255623721881391,
+    fontSize: width > 340 ? height*0.0255623721881391 : height*0.0195623721881391,
     backgroundColor: 'red',
     color: 'white',
     paddingHorizontal: 10,
@@ -282,7 +286,7 @@ const styles = StyleSheet.create({
    },
    startTrackingText: {
     textAlign: 'center',
-     fontSize: height*0.0255623721881391,
+     fontSize: width > 340 ? height*0.0255623721881391 : height*0.0195623721881391,
      backgroundColor: 'green',
      color: 'white',
      paddingHorizontal: 10,
@@ -309,16 +313,16 @@ const styles = StyleSheet.create({
    // backgroundColor: '#b6e173',
     //position: 'absolute',
     //marginTop: height*0.64,
-   
+   //width: '70%',
     bottom: height > 592 ? height * -0.6445 : height*-0.5745,
     
   },
   sosi:{
     flex: 4, 
-    flexDirection: 'row',
-    backgroundColor: 'green', 
-   justifyContent: 'center',
-   alignItems: 'center'
+   // flexDirection: 'row',
+   // backgroundColor: 'green', 
+   //justifyContent: 'center',
+   //alignItems: 'center'
   //  padding: 10 ,
 
   },
@@ -395,8 +399,10 @@ const styles = StyleSheet.create({
           </View>
           <View style={styles.botonera}>
           <Sos  style={styles.sosi} width={width} height={height} />
-          
-          <Recorrido  style={styles.recorridoi}  recorrido={data.recorrido} width={width} height={height} onPress={startLocation}  />  
+         
+          <Recorrido  style={styles.recorridoi}  recorrido={data.recorrido}  width={width} height={height} onPress={startLocation}  />  
+         
+         
           <Whatsapp   style={styles.whatsappi} whatsapp={data.whatsapp}  contacto1={data.nombrecontacto} width={width} height={height}    /////////////////////////////////////////////////////////////////>  
           />
           </View>

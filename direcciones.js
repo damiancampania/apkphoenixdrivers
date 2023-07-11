@@ -25,6 +25,7 @@ function Direcciones({ direcciones, width,height }) {
 
   const styles = StyleSheet.create({
     boton: {
+      
       alignItems: 'center',
       height: 100,
     },

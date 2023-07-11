@@ -19,20 +19,21 @@ function Whatsapp({ whatsapp, contacto1,width, height }) {
   
 const styles = StyleSheet.create({
   boton:{
-    flex: 1,
+    flex: 4,
     width: 100,
    // flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center', // Alineación vertical centrada
-    marginRight: 25,
+    left: width > 340 ? width * -0.0130208333333333 : width*-0.0330208333333333,
     marginTop: -80,
     top:0,
+   // backgroundColor: 'red',
   },
-  imagentitulo: {
-    width: 75,
-    height: 75,
+  imagentitulo123: {
+    width: width*0.1953125,
+    height: width*0.1953125,
    alignItems: 'center',
-   paddingRight: 15,
+  // paddingRight: 15,
   },
   caradenovia: {
     width: width*0.2564583333333333,
@@ -48,7 +49,7 @@ const styles = StyleSheet.create({
     marginTop: -200,
     marginBottom: 11,
    // marginLeft: '0%',
-    marginRight:-10,
+   // marginRight:-10,
    // backgroundColor: 'red'
    
   },
@@ -59,7 +60,7 @@ const styles = StyleSheet.create({
       
       <TouchableOpacity onPress={handleWhatsAppCall}>
         <Image
-          style={styles.imagentitulo}
+          style={styles.imagentitulo123}
           source={require('./assets/whatsappbotonfinal.png')}
           resizeMode="contain"
         />

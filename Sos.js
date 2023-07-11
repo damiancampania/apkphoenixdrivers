@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View, TouchableOpacity, Image, Linking } from 'react-native';
 import { Audio } from 'expo-av';
 
-function Sos() {
+function Sos({ width, height }) {
   const handlePhoneCall = async () => {
     try {
       // Reproducir tono de llamada simulado
@@ -24,11 +24,24 @@ function Sos() {
     }
   };
 
+  const styles = StyleSheet.create({
+    boton: {
+  
+  alignItems: 'flex-start',
+    },
+    imagentitulo12: {
+      width:  width*0.1953125,
+      height: width*0.1953125,
+     marginLeft: 10,
+      marginTop: 10,
+    
+    },
+  });
   return (
     <View style={styles.boton}>
       <TouchableOpacity onPress={handlePhoneCall}>
         <Image
-          style={styles.imagentitulo}
+          style={styles.imagentitulo12}
           source={require('./assets/sosboton.png')}
           resizeMode="contain"
         />
@@ -37,18 +50,5 @@ function Sos() {
   );
 }
 
-const styles = StyleSheet.create({
-  boton: {
-
-alignItems: 'flex-start',
-  },
-  imagentitulo: {
-    width: 75,
-    height: 75,
-   marginLeft: 10,
-    marginTop: 10,
-  
-  },
-});
 
 export default Sos;
